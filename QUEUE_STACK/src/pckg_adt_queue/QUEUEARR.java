@@ -74,20 +74,44 @@ public class QUEUEARR <E> implements ADTQUEUE <E> {
         return this.size == 0;
     }
 
+//    @Override
+//    public String toString() {
+//        String front = "Front: ";
+//        String size = "Size: ";
+//        String representation = "";
+//        if (isEmpty()) {
+//            size+= this.size;
+//        } else {
+//            front = front + this.front;
+//            size += this.size;
+//            for (int i = 0; i < this.capacity; i++) {
+//                representation += "[ " + this.queue[i] + " ]";
+//            }
+//        }
+//        return size + "\n" + front + "\n" + representation;
+//    }
     @Override
     public String toString() {
         String front = "Front: ";
         String size = "Size: ";
         String representation = "";
+
         if (isEmpty()) {
-            size+= this.size;
-        } else {
-            front = front + this.front;
             size += this.size;
-            for (int i = 0; i < this.capacity; i++) {
-                representation += "[ " + this.queue[i] + " ]";
+
+        } else {
+            front += this.front;
+            size += this.size;
+
+            for (int k = 0; k < capacity; k++) {
+                if (k == this.front) {
+                    representation += ">>[ " + queue[this.front] + " ]<< ";
+                } else {
+                    representation += "[ " + queue[k] + " ]";
+                }
             }
         }
+
         return size + "\n" + front + "\n" + representation;
     }
 }

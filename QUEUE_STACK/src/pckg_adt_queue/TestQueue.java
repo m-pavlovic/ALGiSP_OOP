@@ -22,5 +22,8 @@ public class TestQueue {
         queue.dequeue();
         queue.dequeue();
         System.out.println(queue);
+        queue.dequeue();
+        System.out.println(queue);
+        queue.dequeue();
     }
 }
